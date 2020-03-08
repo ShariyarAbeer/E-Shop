@@ -31,23 +31,23 @@ export default class HomePage extends React.Component {
             tab={
               <span>
                 <AppleOutlined />
-                Tab 1
+                Home
               </span>
             }
             key="1"
           >
-            Tab 1
+            <Home />
           </TabPane>
           <TabPane
             tab={
               <span>
                 <AndroidOutlined />
-                Tab 2
+                Men
               </span>
             }
             key="2"
           >
-            Tab 2
+            <Men />
           </TabPane>
         </Tabs>
 
