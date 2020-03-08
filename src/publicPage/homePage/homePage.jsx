@@ -1,14 +1,16 @@
 import React, { Fragment } from "react";
-import { Layout, Menu, Breadcrumb, Card } from "antd";
+import { Tabs, Layout } from "antd";
+import { AppleOutlined, AndroidOutlined } from "@ant-design/icons";
 
 import Home from "../../components/home";
 import Men from "../../components/men";
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 import "antd/dist/antd.css";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { TabPane } = Tabs;
+const { Header, Footer } = Layout;
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -24,29 +26,34 @@ export default class HomePage extends React.Component {
             <b>E-Shop</b>
           </h1>
         </Header>
-        <Layout>
-          <Header className="header" style={{ backgroundColor: "white" }}>
-            <div className="logo" />
-            <Menu
-              theme="white"
-              mode="horizontal"
-              defaultSelectedKeys={["1"]}
-              style={{ lineHeight: "64px", textAlign: "center" }}
-            >
-              <Menu.Item key="1">Home</Menu.Item>
-              <Menu.Item key="2">Men</Menu.Item>
-              <Menu.Item key="3">Woman</Menu.Item>
-              <Menu.Item key="4">Other</Menu.Item>
-            </Menu>
-          </Header>
-          <Content>
-            <Home />
-          </Content>
+        <Tabs defaultActiveKey="1" style={{ textAlign: "center" }}>
+          <TabPane
+            tab={
+              <span>
+                <AppleOutlined />
+                Tab 1
+              </span>
+            }
+            key="1"
+          >
+            Tab 1
+          </TabPane>
+          <TabPane
+            tab={
+              <span>
+                <AndroidOutlined />
+                Tab 2
+              </span>
+            }
+            key="2"
+          >
+            Tab 2
+          </TabPane>
+        </Tabs>
 
-          <Footer style={{ textAlign: "center" }}>
-            Ant Design ©2018 Created by Ant UED
-          </Footer>
-        </Layout>
+        <Footer style={{ textAlign: "center" }}>
+          Ant Design ©2018 Created by Ant UED
+        </Footer>
       </Fragment>
     );
   }
