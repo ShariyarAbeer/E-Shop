@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/styles": "^4.9.0",
     "antd": "^4.0.2",
+    "bootstrap": "^4.4.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router": "^5.1.2",

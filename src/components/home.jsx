@@ -2,6 +2,7 @@ import React, { Fragment, Component } from "react";
 import { Carousel, Row, Menu, Col, Divider, List, Card } from "antd";
 import "antd/dist/antd.css";
 
+
 import {
   MailOutlined,
   AppstoreOutlined,
@@ -20,16 +21,22 @@ export default class Home extends React.Component {
     this.state = {
       data: [
         {
-          title: "Title 1"
+          title: "Title 1",
+          src: "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
+                  
+        },
+      
+        {
+          title: "Title 2",
+          src: "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
         },
         {
-          title: "Title 2"
+          title: "Title 3",
+          src: "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
         },
         {
-          title: "Title 3"
-        },
-        {
-          title: "Title 4"
+          title: "Title 4",
+          src: "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
         }
       ]
     };
@@ -40,10 +47,7 @@ export default class Home extends React.Component {
       <Fragment>
         <Row>
           <Col sm={5}>
-            <div style={{ backgroundColor: "dark" }}>
-              <h2>Categories</h2>
-              <Divider />
-            </div>
+            
             <Menu onClick={handleClick} style={{ width: 256 }} mode="vertical">
               <SubMenu
                 key="sub1"
@@ -95,7 +99,7 @@ export default class Home extends React.Component {
               </SubMenu>
             </Menu>
           </Col>
-          <Col sm={18}>
+          <Col sm={19}>
             <Carousel
               autoplay
               style={{
@@ -138,7 +142,8 @@ export default class Home extends React.Component {
           </Col>
         </Row>
         <div>
-          <h1 style={{margin:30}}><b>HOT DEALS</b></h1>
+        
+          <h1 style={{margin:30}}><span class="badge badge-danger">HOT DEALS</span></h1>
           <Divider/>
         </div>
         <div style={{ margin: 20 }}>
@@ -146,9 +151,20 @@ export default class Home extends React.Component {
             grid={{ gutter: 16, column: 4 }}
             dataSource={this.state.data}
             renderItem={item => (
+              
               <List.Item>
+                <Card>
+                <img
+                  style={{ height: "200px", width: "100%" }}
+                  src="https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
+                  alt="golf"
+                />
+                
+                
                 <Card title={item.title}>Card content</Card>
+                </Card>
               </List.Item>
+              
             )}
           />
         </div>

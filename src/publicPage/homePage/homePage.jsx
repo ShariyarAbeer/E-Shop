@@ -24,34 +24,12 @@ export default class HomePage extends React.Component {
       <Fragment style={{ background: "white" }}>
         <Header style={{ backgroundColor: "dark" }}>
           <h1 style={{ color: "white" }}>
-            <b>E-Shop</b>
+          <span class="badge badge-info">E-Shop</span>
+          
           </h1>
         </Header>
-        <Tabs defaultActiveKey="1" style={{ textAlign: "center" }}>
-          <TabPane
-            tab={
-              <span>
-                <AppleOutlined />
-                Home
-              </span>
-            }
-            key="1"
-          >
-            <Home />
-          </TabPane>
-          <TabPane
-            tab={
-              <span>
-                <AndroidOutlined />
-                Men
-              </span>
-            }
-            key="2"
-          >
-            <Men />
-          </TabPane>
-        </Tabs>
-
+        <Home />
+       
         <Footer style={{ textAlign: "center" }}>
           ©2020 Created by Md.Arif Shariyar
         </Footer>
