@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Tabs, Layout } from "antd";
 import { AppleOutlined, AndroidOutlined } from "@ant-design/icons";
+import "antd/dist/antd.css";
 
 import Home from "../../components/home";
 import Men from "../../components/men";
