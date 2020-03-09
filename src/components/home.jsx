@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from "react";
-import { Carousel, Row, Menu, Col } from "antd";
+import { Carousel, Row, Menu, Col, Divider, List, Card } from "antd";
 import "antd/dist/antd.css";
 
 import {
@@ -17,7 +17,22 @@ function handleClick(e) {
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: [
+        {
+          title: "Title 1"
+        },
+        {
+          title: "Title 2"
+        },
+        {
+          title: "Title 3"
+        },
+        {
+          title: "Title 4"
+        }
+      ]
+    };
   }
 
   render() {
@@ -25,6 +40,10 @@ export default class Home extends React.Component {
       <Fragment>
         <Row>
           <Col sm={5}>
+            <div style={{ backgroundColor: "dark" }}>
+              <h2>Categories</h2>
+              <Divider />
+            </div>
             <Menu onClick={handleClick} style={{ width: 256 }} mode="vertical">
               <SubMenu
                 key="sub1"
@@ -118,6 +137,21 @@ export default class Home extends React.Component {
             </Carousel>
           </Col>
         </Row>
+        <div>
+          <h1 style={{margin:30}}><b>HOT DEALS</b></h1>
+          <Divider/>
+        </div>
+        <div style={{ margin: 20 }}>
+          <List
+            grid={{ gutter: 16, column: 4 }}
+            dataSource={this.state.data}
+            renderItem={item => (
+              <List.Item>
+                <Card title={item.title}>Card content</Card>
+              </List.Item>
+            )}
+          />
+        </div>
       </Fragment>
     );
   }
