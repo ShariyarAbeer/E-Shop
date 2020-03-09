@@ -53,7 +53,7 @@ export default class HomePage extends React.Component {
         </Tabs>
 
         <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
+          ©2020 Created by Md.Arif Shariyar
         </Footer>
       </Fragment>
     );
