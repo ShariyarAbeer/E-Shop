@@ -1,7 +1,8 @@
 import React, { Fragment, Component } from "react";
 import { Carousel, Row, Menu, Col, Divider, List, Card } from "antd";
 import "antd/dist/antd.css";
-
+import Men from "./men";
+import { Link } from "react-router";
 
 import {
   MailOutlined,
@@ -22,21 +23,24 @@ export default class Home extends React.Component {
       data: [
         {
           title: "Title 1",
-          src: "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
-                  
+          src:
+            "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
         },
-      
+
         {
           title: "Title 2",
-          src: "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
+          src:
+            "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
         },
         {
           title: "Title 3",
-          src: "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
+          src:
+            "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
         },
         {
           title: "Title 4",
-          src: "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
+          src:
+            "https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
         }
       ]
     };
@@ -47,7 +51,6 @@ export default class Home extends React.Component {
       <Fragment>
         <Row>
           <Col sm={5}>
-            
             <Menu onClick={handleClick} style={{ width: 256 }} mode="vertical">
               <SubMenu
                 key="sub1"
@@ -59,7 +62,9 @@ export default class Home extends React.Component {
                 }
               >
                 <Menu.ItemGroup title="Item 1">
-                  <Menu.Item key="1">P</Menu.Item>
+                  <Menu.Item key="1">
+                    <Link to={"/men"}>P</Link>
+                  </Menu.Item>
                   <Menu.Item key="2">s</Menu.Item>
                 </Menu.ItemGroup>
                 <Menu.ItemGroup title="Iteom 2">
@@ -142,29 +147,27 @@ export default class Home extends React.Component {
           </Col>
         </Row>
         <div>
-        
-          <h1 style={{margin:30}}><span class="badge badge-danger">HOT DEALS</span></h1>
-          <Divider/>
+          <h1 style={{ margin: 30 }}>
+            <span class="badge badge-danger">HOT DEALS</span>
+          </h1>
+          <Divider />
         </div>
         <div style={{ margin: 20 }}>
           <List
             grid={{ gutter: 16, column: 4 }}
             dataSource={this.state.data}
             renderItem={item => (
-              
               <List.Item>
                 <Card>
-                <img
-                  style={{ height: "200px", width: "100%" }}
-                  src="https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
-                  alt="golf"
-                />
-                
-                
-                <Card title={item.title}>Card content</Card>
+                  <img
+                    style={{ height: "200px", width: "100%" }}
+                    src="https://images-na.ssl-images-amazon.com/images/I/91bQYhS1yQL._AC_UX500_.jpg"
+                    alt="golf"
+                  />
+
+                  <Card title={item.title}>Card content</Card>
                 </Card>
               </List.Item>
-              
             )}
           />
         </div>
