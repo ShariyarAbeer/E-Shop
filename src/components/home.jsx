@@ -62,9 +62,7 @@ export default class Home extends React.Component {
                 }
               >
                 <Menu.ItemGroup title="Item 1">
-                  <Menu.Item key="1">
-                    <Link to={"/men"}>P</Link>
-                  </Menu.Item>
+                  <Menu.Item key="1">P</Menu.Item>
                   <Menu.Item key="2">s</Menu.Item>
                 </Menu.ItemGroup>
                 <Menu.ItemGroup title="Iteom 2">
